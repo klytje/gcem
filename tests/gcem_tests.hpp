@@ -24,6 +24,7 @@
 #include <iomanip>
 #include <string>
 #include <functional>
+#include <cstdint> // INT64_MIN and INT64_MAX
 
 #include "gcem.hpp"
 
