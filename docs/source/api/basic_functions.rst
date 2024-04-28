@@ -11,6 +11,18 @@ Basic functions
 .. doxygenfunction:: abs(const T)
    :project: gcem
 
+.. _fabs-function-reference:
+.. doxygenfunction:: fabs(const T)
+   :project: gcem
+
+.. _fabsf-func-ref:
+.. doxygenfunction:: fabsf(const T)
+   :project: gcem
+
+.. _fabsl-func-ref:
+.. doxygenfunction:: fabsl(const T)
+   :project: gcem
+
 .. _ceil-function-reference:
 .. doxygenfunction:: ceil(const T)
    :project: gcem
