@@ -27,20 +27,21 @@ int main()
 {
     print_begin("fabsf");
 
-    //
+    // note: we use std::fabs instead of std::fabsf due to
+    // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=79700
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, 0.0f);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf,-0.0f);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, 1.0f);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf,-1.0f);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, 0.0f);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs,-0.0f);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, 1.0f);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs,-1.0f);
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, std::numeric_limits<float>::lowest());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, std::numeric_limits<float>::min());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, std::numeric_limits<float>::max());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, std::numeric_limits<float>::lowest());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, std::numeric_limits<float>::min());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, std::numeric_limits<float>::max());
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, std::numeric_limits<float>::quiet_NaN());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, std::numeric_limits<float>::infinity());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabsf, -std::numeric_limits<float>::infinity());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, std::numeric_limits<float>::quiet_NaN());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, std::numeric_limits<float>::infinity());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsf,std::fabs, -std::numeric_limits<float>::infinity());
 
     //
 

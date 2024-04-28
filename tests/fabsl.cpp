@@ -27,33 +27,34 @@ int main()
 {
     print_begin("fabsl");
 
-    //
+    // note: we use std::fabs instead of std::fabsl due to
+    // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=79700
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, 0.0);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl,-0.0);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, 1.0);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl,-1.0);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, 0.0);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs,-0.0);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, 1.0);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs,-1.0);
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, 0.0L);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl,-0.0L);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, 1.0L);
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl,-1.0L);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, 0.0L);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs,-0.0L);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, 1.0L);
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs,-1.0L);
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<double>::lowest());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<double>::min());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<double>::max());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<double>::lowest());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<double>::min());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<double>::max());
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<long double>::lowest());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<long double>::min());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<long double>::max());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<long double>::lowest());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<long double>::min());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<long double>::max());
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<double>::quiet_NaN());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<double>::infinity());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, -std::numeric_limits<double>::infinity());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<double>::quiet_NaN());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<double>::infinity());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, -std::numeric_limits<double>::infinity());
 
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<long double>::quiet_NaN());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, std::numeric_limits<long double>::infinity());
-    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabsl, -std::numeric_limits<long double>::infinity());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<long double>::quiet_NaN());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, std::numeric_limits<long double>::infinity());
+    GCEM_TEST_COMPARE_VALS(gcem::fabsl,std::fabs, -std::numeric_limits<long double>::infinity());
 
     //
 
